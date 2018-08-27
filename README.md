@@ -1,4 +1,4 @@
-#NBCC Mobile
+# NBCC Mobile
 
 New Beginnings Community Church Mobile app
 
@@ -16,7 +16,7 @@ This app currently demonstrates the bare minimum requirements/files needed to cr
 * Create an index.jsx file with React JSX syntax
 *Watch the JSX file as you develop! `watchify ./index.jsx -o ./bundle.js -t babelify -v`
 
-##What's happening here?
+## What's happening here?
 
 The HTML page defines a mount div element with an id of `root`.
 ```$html
