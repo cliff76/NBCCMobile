@@ -1,0 +1,15 @@
+{
+  "name": "nbccmobile",
+  "version": "1.0.0",
+  "description": "NBCC Mobile App",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "./"
+  },
+  "author": "Clifton C. Craig",
+  "license": "ISC"
+}
