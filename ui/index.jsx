@@ -4,6 +4,24 @@ import ReactDOM from 'react-dom';
 
 import { FaPencilAlt } from 'react-icons/fa';
 
+class Member extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: props.name,
+            isCheckedIn: false
+        };
+    }
+    render() {
+        return (
+            <div className={'row'}>
+                <div className={'col'}>{this.state.name}</div>
+                <div className={'col'}><button className={'btn-primary'}><FaPencilAlt/></button></div>
+            </div>
+        );
+    }
+}
+
 class App extends React.Component {
     render() {
         return (
@@ -11,18 +29,10 @@ class App extends React.Component {
                 <div className={'row'}>
                     <div className={'col'}>Check In</div>
                 </div>
-                <div className={'row'}>
-                    <div className={'col'}>Mary Gunderson</div>
-                    <div className={'col'}><button className={'btn-primary'}><FaPencilAlt/></button></div>
-                </div>
-                <div className={'row'}>
-                    <div className={'col'}>Lucas Rose</div>
-                    <div className={'col'}><button className={'btn-primary'}><FaPencilAlt/></button></div>
-                </div>
-                <div className={'row'}>
-                    <div className={'col'}>George Fouché</div>
-                    <div className={'col'}><button className={'btn-primary'}><FaPencilAlt/></button></div>
-                </div>
+                <Member name="Lisa Yi" />
+                <Member name="Mary Gunderson" />
+                <Member name="Lucas Rose" />
+                <Member name="George Fouché" />
             </div>
         );
     }
