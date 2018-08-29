@@ -4,7 +4,8 @@
   "description": "NBCC Mobile App",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "watch": "watchify ./index.jsx -o ./bundle.js -t babelify -v"
   },
   "repository": {
     "type": "git",
