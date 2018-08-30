@@ -4,76 +4,115 @@ import ReactDOM from 'react-dom';
 
 import { FaPencilAlt, FaSave } from 'react-icons/fa';
 
-class Member extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: props.name,
-            isCheckedIn: false,
-            isEditing: false
-        };
-        this.handleEditClick = this.handleEditClick.bind(this);
-        this.handleSaveClick = this.handleSaveClick.bind(this);
-        this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleCheckinClick = this.handleCheckinClick.bind(this);
+class EditMember extends React.Component {
+
+    save() {
+        this.props.handleSaveClick(this.props.member.id);
     }
 
-    handleEditClick() {
-        this.setState(Object.assign(this.state, {isEditing:true}))
+    checkin() {
+        this.props.handleCheckinClick(this.props.member.id, this.checkbox.checked);
     }
 
-    handleSaveClick() {
-        this.setState(Object.assign(this.state, {isEditing:false}))
+    updateName() {
+        this.props.handleNameChange(this.props.member.id, this.text.value);
     }
 
-    handleNameChange(e) {
-        this.setState(Object.assign(this.state, {name:e.target.value}))
-    }
-
-    handleCheckinClick(e) {
-        this.setState(Object.assign(this.state, {isCheckedIn:e.target.checked}))
-    }
-
-    renderEdit() {
-        console.log('state', this.state);
+    render() {
         return (
             <div className={'row'}>
-                <div className="col"><input value={this.state.name} onChange={this.handleNameChange}/></div>
-                <div className="col">Checked in? <input type="checkbox" onChange={this.handleCheckinClick} checked={this.state.isCheckedIn}/></div>
-                <div className="col"><button className="btn-primary" onClick={this.handleSaveClick}><FaSave/></button></div>
+                <div className="col"><input value={this.props.member.name}  ref={ input => this.text = input} onChange={this.updateName.bind(this)}/></div>
+                <div className="col">Checked in? <input type="checkbox" ref={ input => this.checkbox = input} onChange={this.checkin.bind(this)} checked={this.props.member.isCheckedIn}/></div>
+                <div className="col"><button className="btn-primary" onClick={this.save.bind(this)}><FaSave/></button></div>
             </div>
         )
     }
+}
 
-    renderDisplay() {
+class Member extends React.Component {
+
+    edit() {
+        this.props.handleEditClick(this.props.member.id);
+    }
+
+    render() {
         return (
             <div className={'row'}>
-                <div className="col">{this.state.name}</div>
+                <div className="col">{this.props.member.name}</div>
                 <div className="col">
-                    <button className="btn-primary" onClick={this.handleEditClick}>
+                    <button className="btn-primary" onClick={this.edit.bind(this)}>
                         <FaPencilAlt/>
                     </button>
                 </div>
             </div>
         );
     }
-
-    render() {
-        return this.state.isEditing ? this.renderEdit() : this.renderDisplay();
-    }
 }
 
 class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { members:[
+            { id:'1', name:'Lisa Yi', isCheckedIn:false },
+            { id:'2', name:'Mary Gunderson', isCheckedIn:false },
+            { id:'3', name:'Lucas Rose', isCheckedIn:false },
+            { id:'4', name:'George Fouché', isCheckedIn:false }
+        ]};
+    }
+
+    handleEditClick(id) {
+        this.setState(prevState => ({
+            members: prevState.members.map( member =>
+                member.id !== id ? member : Object.assign(member, {isEditing:true})
+            )
+        }));
+    }
+
+    handleSaveClick(id) {
+        this.setState(prevState => ({
+            members: prevState.members.map( member =>
+                member.id !== id ? member : Object.assign(member, {isEditing:false})
+            )
+        }));
+    }
+
+    handleNameChange(id, newName) {
+        this.setState(prevState => ({
+            members: prevState.members.map( member =>
+                member.id !== id ? member : Object.assign(member, {name:newName})
+            )
+        }));
+    }
+
+    handleCheckinClick(id, checked) {
+        this.setState(prevState => ({
+            members: prevState.members.map( member =>
+                member.id !== id ? member : Object.assign(member, {isCheckedIn:checked})
+            )
+        }));
+    }
+
+    eachMember(member) {
+        return member.isEditing ?
+            (<EditMember key={member.id} member={member}
+                         handleSaveClick={this.handleSaveClick.bind(this)}
+                         handleNameChange={this.handleNameChange.bind(this)}
+                         handleCheckinClick={this.handleCheckinClick.bind(this)}
+            />) :
+            (<Member key={member.id} member={member}
+                     handleEditClick={this.handleEditClick.bind(this)}
+            />);
+    }
+
     render() {
+        console.log('State:', this.state);
         return (
             <div className="container card-header">
                 <div className={'row'}>
                     <div className={'col'}>Check In</div>
                 </div>
-                <Member name="Lisa Yi" />
-                <Member name="Mary Gunderson" />
-                <Member name="Lucas Rose" />
-                <Member name="George Fouché" />
+                {this.state.members.map(this.eachMember.bind(this))}
             </div>
         );
     }
