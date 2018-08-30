@@ -69,6 +69,8 @@ class App extends React.Component {
     );
   }
 };
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 ```
 The `watchify` command also includes the babel transform which converts the `import` statements to `require()` function
 calls:
