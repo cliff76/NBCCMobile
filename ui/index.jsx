@@ -4,49 +4,41 @@ import ReactDOM from 'react-dom';
 
 import { FaPencilAlt, FaSave } from 'react-icons/fa';
 
-class EditMember extends React.Component {
-
-    save() {
-        this.props.handleSaveClick(this.props.member.id);
-    }
-
-    checkin() {
-        this.props.handleCheckinClick(this.props.member.id, this.checkbox.checked);
-    }
-
-    updateName() {
-        this.props.handleNameChange(this.props.member.id, this.text.value);
-    }
-
-    render() {
-        return (
-            <div className={'row'}>
-                <div className="col"><input value={this.props.member.name}  ref={ input => this.text = input} onChange={this.updateName.bind(this)}/></div>
-                <div className="col">Checked in? <input type="checkbox" ref={ input => this.checkbox = input} onChange={this.checkin.bind(this)} checked={this.props.member.isCheckedIn}/></div>
-                <div className="col"><button className="btn-primary" onClick={this.save.bind(this)}><FaSave/></button></div>
+function EditMember(props) {
+    let text = undefined, checkbox = undefined;
+    return (
+        <div className={'row'}>
+            <div className="col">
+                <input value={props.member.name}  ref={ input => text = input}
+                       onChange={() => props.handleNameChange(props.member.id, text.value)}/>
             </div>
-        )
-    }
+            <div className="col">
+                Checked in?
+                <input type="checkbox" ref={ input => checkbox = input}
+                       onChange={() => props.handleCheckinClick(props.member.id, checkbox.checked)}
+                       checked={props.member.isCheckedIn}/>
+            </div>
+            <div className="col">
+                <button className="btn-primary"
+                        onClick={()=> props.handleSaveClick(props.member.id)}>
+                    <FaSave/>
+                </button>
+            </div>
+        </div>
+    )
 }
 
-class Member extends React.Component {
-
-    edit() {
-        this.props.handleEditClick(this.props.member.id);
-    }
-
-    render() {
+function Member(props) {
         return (
             <div className={'row'}>
-                <div className="col">{this.props.member.name}</div>
+                <div className="col">{props.member.name}</div>
                 <div className="col">
-                    <button className="btn-primary" onClick={this.edit.bind(this)}>
+                    <button className="btn-primary" onClick={() => props.handleEditClick(props.member.id)}>
                         <FaPencilAlt/>
                     </button>
                 </div>
             </div>
         );
-    }
 }
 
 class App extends React.Component {
