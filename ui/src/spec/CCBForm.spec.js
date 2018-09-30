@@ -9,7 +9,7 @@ fs.readFileAsync = util.promisify(fs.readFile);
 configure({ adapter: new Adapter() });
 
 describe("CCBForms", () => {
-  it("should contain the xml passed via its constructor", () => {
+  it("should contain the xml passed via props in its constructor", () => {
     return fs
       .readFileAsync("./src/spec/example-form-detail.xml")
       .then(xmlData => {
