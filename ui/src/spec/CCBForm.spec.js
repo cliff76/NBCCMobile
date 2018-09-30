@@ -19,28 +19,28 @@ describe("CCBForms", () => {
       });
   });
 
-  it("should render from CCB Form data", () => {
+  it("should render a form pulling the title from CCB Form data", () => {
+    const possibleTitles = ['Connect Card Feb', 'Generic Form', 'Test Form', 'March'];
+    const randomNumber = Math.floor(Math.random() * possibleTitles.length);
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <ccb_api>
       <response>
         <forms>
           <form>
-            <title>Connection Card</title>
+            <title>${possibleTitles[randomNumber]}</title>
           </form>
         </forms>
       </response>
     </ccb_api>
     `;
-    const component = shallow(<CCBForm xml={xml} />);
-    expect(component).toMatchInlineSnapshot(`
+    expect(shallow(<CCBForm xml={xml} />)).toMatchInlineSnapshot(`
 <form>
   <div
     className="title"
   >
-    Connection Card
+    ${possibleTitles[randomNumber]}
   </div>
 </form>
 `);
   });
-
 });

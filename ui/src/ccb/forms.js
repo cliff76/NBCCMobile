@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
+import xml2json from 'xml2json';
 
 export default class Forms extends Component {
   constructor(props) {
     super(props);
     this.xml = props.xml;
+    this.formDetail = JSON.parse(xml2json.toJson(props.xml));
   }
-
-  asHTMLForm() {
-    return `<form>
-<div class="title">Connection Card</div>
-</form>
-`;
-  }
-
   render() {
     return (<form>
-      <div className="title">Connection Card</div>
+      <div className="title">{this.formDetail.ccb_api.response.forms.form.title}</div>
     </form>);
   }
 }
