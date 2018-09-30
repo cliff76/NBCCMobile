@@ -70,7 +70,8 @@
                         </field>
                     </fields>
                 </profile>
-                <questions>                         <question id="6440">
+                <questions>
+                    <question id="6440">
                     <title>Gathering Attended</title>
                     <explanation></explanation>
                     <required>true</required>

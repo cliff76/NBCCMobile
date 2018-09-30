@@ -9,7 +9,7 @@ export default class Forms extends Component {
   }
   render() {
     return (<form>
-      <div className="title">{this.formDetail.ccb_api.response.forms.form.title}</div>
+      <div className="title">{this.formDetail.form.title}</div>
     </form>);
   }
 }

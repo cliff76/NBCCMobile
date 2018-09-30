@@ -23,15 +23,9 @@ describe("CCBForms", () => {
     const possibleTitles = ['Connect Card Feb', 'Generic Form', 'Test Form', 'March'];
     const randomNumber = Math.floor(Math.random() * possibleTitles.length);
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-    <ccb_api>
-      <response>
-        <forms>
-          <form>
-            <title>${possibleTitles[randomNumber]}</title>
-          </form>
-        </forms>
-      </response>
-    </ccb_api>
+    <form>
+      <title>${possibleTitles[randomNumber]}</title>
+    </form>
     `;
     expect(shallow(<CCBForm xml={xml} />)).toMatchInlineSnapshot(`
 <form>
