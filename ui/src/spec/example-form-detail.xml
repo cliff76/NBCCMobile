@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccb_api>
+    <request>
+        <parameters>
+            <argument value="form_detail" name="srv"/>
+            <argument value="680" name="id"/>
+        </parameters>
+    </request>
+    <response>
+        <service>form_detail</service>
+        <service_action>execute</service_action>
+        <availability>public</availability>
+        <forms count="1">
+            <form id="680">
+                <title>Connection Card (Test 2 App) - CLIFTON TEST</title>
+                <description></description>
+                <campus id="1">New Beginnings Community Church</campus>
+                <confirmationText></confirmationText>
+                <showConfirmationCode></showConfirmationCode>
+                <start>8/8/2018</start>
+                <end></end>
+                <status>Available</status>
+                <public>false</public>
+                <published>true</published>
+                <disabled>false</disabled>
+                <hasDiscountCodes>false</hasDiscountCodes>
+                <creator id="5" value="Kristin Mandia"></creator>
+                <modifier id="5" value="Kristin Mandia"></modifier>
+                <created>2018-08-08 17:37:42</created>
+                <modified>2018-08-08 17:38:26</modified>
+                <profile id="651">
+                    <title>Contact Information</title>
+                    <explanation></explanation>
+                    <fields>
+                        <field id="4321">
+                            <name>birthday</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4322">
+                            <name>email</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4323">
+                            <name>first_name</name>
+                            <required>true</required>
+                        </field>
+                        <field id="4324">
+                            <name>gender</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4325">
+                            <name>home_phone</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4326">
+                            <name>last_name</name>
+                            <required>true</required>
+                        </field>
+                        <field id="4327">
+                            <name>mailing_address</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4328">
+                            <name>marital_status</name>
+                            <required>false</required>
+                        </field>
+                        <field id="4329">
+                            <name>mobile_phone</name>
+                            <required>false</required>
+                        </field>
+                    </fields>
+                </profile>
+                <questions>                         <question id="6440">
+                    <title>Gathering Attended</title>
+                    <explanation></explanation>
+                    <required>true</required>
+                    <questionType>Radio Buttons</questionType>
+                    <order>0</order>
+                    <adminOnly>false</adminOnly>
+                    <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                    <disabled>false</disabled>
+                    <min>0</min>
+                    <max>0</max>
+                    <choices>                                   <choice id="13132">
+                        <name>8:30 AM</name>
+                        <order>0</order>
+                        <disabled>false</disabled>
+                        <coa></coa>
+                        <price>0</price>
+                        <min>0</min>
+                        <max>0</max>
+                        <totalAvailable>0</totalAvailable>
+                    </choice>
+                        <choice id="13133">
+                            <name>10:15 AM</name>
+                            <order>1</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                        <choice id="13134">
+                            <name>12 Noon</name>
+                            <order>2</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                    </choices>
+                    <options></options>
+                </question>
+                    <question id="6441">
+                        <title>I am a</title>
+                        <explanation></explanation>
+                        <required>true</required>
+                        <questionType>Radio Buttons</questionType>
+                        <order>1</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices>                                   <choice id="13135">
+                            <name>Regular Attendee</name>
+                            <order>1</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                            <choice id="13136">
+                                <name>First-Time Guest</name>
+                                <order>2</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13137">
+                                <name>Second-Time Guest</name>
+                                <order>3</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                        </choices>
+                        <options></options>
+                    </question>
+                    <question id="6442">
+                        <title>How did you hear about NBCC?</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Pulldown Menu</questionType>
+                        <order>2</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices>                                   <choice id="13138">
+                            <name>Friend or Relative</name>
+                            <order>0</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                            <choice id="13139">
+                                <name>Web Search</name>
+                                <order>1</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13140">
+                                <name>Website</name>
+                                <order>2</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13141">
+                                <name>Ad</name>
+                                <order>3</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13142">
+                                <name>Social Media</name>
+                                <order>4</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13143">
+                                <name>Postcard</name>
+                                <order>5</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13144">
+                                <name>Mailer</name>
+                                <order>6</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13145">
+                                <name>Other</name>
+                                <order>7</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                        </choices>
+                        <options></options>
+                    </question>
+                    <question id="6443">
+                        <title>Name of Friend/Relative or Additional Information</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Single Line Text</questionType>
+                        <order>3</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices></choices>
+                        <options></options>
+                    </question>
+                    <question id="6444">
+                        <title>NEXT STEPS</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Section Break</questionType>
+                        <order>4</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices></choices>
+                        <options></options>
+                    </question>
+                    <question id="6445">
+                        <title>I want to take a next step with Jesus by</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Checkboxes</questionType>
+                        <order>5</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices>                                   <choice id="13146">
+                            <name>Becoming a new follower or rededicating my life to Jesus</name>
+                            <order>0</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                            <choice id="13147">
+                                <name>Learning more about what it means to follow Jesus</name>
+                                <order>1</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                        </choices>
+                        <options></options>
+                    </question>
+                    <question id="6446">
+                        <title>Please contact me about</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Checkboxes</questionType>
+                        <order>6</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices>                                   <choice id="13148">
+                            <name>Getting Baptized</name>
+                            <order>1</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                            <choice id="13149">
+                                <name>Joining a Life Group</name>
+                                <order>2</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                            <choice id="13150">
+                                <name>Serving on a Team</name>
+                                <order>3</order>
+                                <disabled>false</disabled>
+                                <coa></coa>
+                                <price>0</price>
+                                <min>0</min>
+                                <max>0</max>
+                                <totalAvailable>0</totalAvailable>
+                            </choice>
+                        </choices>
+                        <options></options>
+                    </question>
+                    <question id="6447">
+                        <title>Prayer Requests</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Paragraph Text</questionType>
+                        <order>7</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices></choices>
+                        <options></options>
+                    </question>
+                    <question id="6448">
+                        <title>Message Response</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Checkboxes</questionType>
+                        <order>8</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices>                                   <choice id="13151">
+                            <name>Yes</name>
+                            <order>1</order>
+                            <disabled>false</disabled>
+                            <coa></coa>
+                            <price>0</price>
+                            <min>0</min>
+                            <max>0</max>
+                            <totalAvailable>0</totalAvailable>
+                        </choice>
+                        </choices>
+                        <options></options>
+                    </question>
+                    <question id="6449">
+                        <title>Additional Comments</title>
+                        <explanation></explanation>
+                        <required>false</required>
+                        <questionType>Paragraph Text</questionType>
+                        <order>9</order>
+                        <adminOnly>false</adminOnly>
+                        <allowOneChoiceOnly>false</allowOneChoiceOnly>
+                        <disabled>false</disabled>
+                        <min>0</min>
+                        <max>0</max>
+                        <choices></choices>
+                        <options></options>
+                    </question>
+                </questions>
+                <attachments></attachments>
+                <discountCodes></discountCodes>
+                <paymentOptions></paymentOptions>
+            </form>
+        </forms>
+    </response>
+</ccb_api>
