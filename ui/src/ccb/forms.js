@@ -1,6 +1,9 @@
-export default class Forms {
-  constructor(xml) {
-    this.xml = xml;
+import React, { Component } from 'react';
+
+export default class Forms extends Component {
+  constructor(props) {
+    super(props);
+    this.xml = props.xml;
   }
 
   asHTMLForm() {
@@ -8,5 +11,11 @@ export default class Forms {
 <div class="title">Connection Card</div>
 </form>
 `;
+  }
+
+  render() {
+    return (<form>
+      <div className="title">Connection Card</div>
+    </form>);
   }
 }
