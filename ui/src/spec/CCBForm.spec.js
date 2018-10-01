@@ -20,7 +20,12 @@ describe("CCBForms", () => {
   });
 
   it("should render a form pulling the title from CCB Form data", () => {
-    const possibleTitles = ['Connect Card Feb', 'Generic Form', 'Test Form', 'March'];
+    const possibleTitles = [
+      "Connect Card Feb",
+      "Generic Form",
+      "Test Form",
+      "March"
+    ];
     const randomNumber = Math.floor(Math.random() * possibleTitles.length);
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <form>
@@ -31,6 +36,41 @@ describe("CCBForms", () => {
 <form>
   <div
     className="title"
+  >
+    ${possibleTitles[randomNumber]}
+  </div>
+  <div
+    className="secondary-title"
+  />
+</form>
+`);
+  });
+
+  it("should render a 2nd title pulling the title from CCB profile section", () => {
+    const possibleTitles = [
+      "Connect Card Feb",
+      "Generic Form",
+      "Test Form",
+      "March"
+    ];
+    const randomNumber = Math.floor(Math.random() * possibleTitles.length);
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+    <form>
+      <title>Connection Card</title>
+      <profile>
+        <title>${possibleTitles[randomNumber]}</title>
+      </profile>
+    </form>
+    `;
+    expect(shallow(<CCBForm xml={xml} />)).toMatchInlineSnapshot(`
+<form>
+  <div
+    className="title"
+  >
+    Connection Card
+  </div>
+  <div
+    className="secondary-title"
   >
     ${possibleTitles[randomNumber]}
   </div>

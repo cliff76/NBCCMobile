@@ -10,6 +10,7 @@ export default class Forms extends Component {
   render() {
     return (<form>
       <div className="title">{this.formDetail.form.title}</div>
+      <div className="secondary-title">{(this.formDetail.form.profile || {}).title}</div>
     </form>);
   }
 }
